@@ -29,3 +29,48 @@ function startRating(item){
 		}
 	}
 }
+
+function saveTols(){
+    const convertedArr=JSON.stringify(submitRate);
+
+    console.log('lenght'+convertedArr.length);
+    localStorage.setItem('Rate',convertedArr);
+
+}
+
+function getStorage(){
+    const dat=localStorage.getItem('Rate');
+
+    const convertedArr2=JSON.parse(dat);
+    if(convertedArr2){
+        new submitRate(convertedArr2.user,convertedArr2.review)
+        console.log('........');
+        console.log(submitRate);
+        submitRate = convertedArr2;
+
+    console.log('length:'+convertedArr2.length)
+    localStorage.setItem('main',convertedArr2);
+
+}
+
+}
+function getLocalStorage(){
+    const dat=localStorage.getItem('main');
+    const convertedArr2 = JSON.parse(dat);
+    if (convertedArr2){
+        new submitRate(convertedArr2.user,convertedArr2.review)
+    console.log('');
+    console.log(submitRate);
+    submitRate=convertedArr2;
+
+      
+    const add=JSON.parse(dat);
+    console.log(add);
+    if(add){
+      submitRate = add;
+
+        renderThreeImages();
+    }
+
+}
+}
