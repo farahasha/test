@@ -14,7 +14,8 @@ function submitRate(){
  
 		document.getElementById('user').value="";
 		document.getElementById('review').value="";
-	}
+    }
+// saveTols();
 }
  
 function startRating(item){
@@ -30,29 +31,33 @@ function startRating(item){
 	}
 }
 
-function saveTols(){
-    const convertedArr=JSON.stringify(submitRate);
+// function saveTols(){
+//     const convertedArr=JSON.stringify(star.globalarr);
+//     localStorage.setItem('order',convertedArr);
 
-    console.log('lenght'+convertedArr.length);
-    localStorage.setItem('Rate',convertedArr);
+// }
 
+function getFromls(){
+    const data=localStorage.getItem('order');
+console.log(data);
+  const parsedOrder = JSON.parse(data); 
+  console.log(parsedOrder); 
+  if(parsedOrder){   
+
+    Star.globalarr = parsedOrder;
+    
+    renderOrders();
+  }
 }
 
-function getStorage(){
-    const dat=localStorage.getItem('Rate');
-
-    const convertedArr2=JSON.parse(dat);
-    if(convertedArr2){
-        new submitRate(convertedArr2.user,convertedArr2.review)
-        console.log('........');
-        console.log(submitRate);
-        submitRate = convertedArr2;
-
-    console.log('length:'+convertedArr2.length)
-    localStorage.setItem('main',convertedArr2);
-
-}
-
+function renderOrders(){
+    let input=document.createElement('li');
+  //   orders.textContent = '';
+                          
+     for(let i = 0; i < Star.globalarr.length; i++){
+  
+      input.textContent = `${Star.globalarr[i].name}  ${Star.globalarr[i].prefctuerName} ${Star.globalarr[i].rview}  `;
+    }
 }
 function getLocalStorage(){
     const dat=localStorage.getItem('main');
@@ -62,15 +67,7 @@ function getLocalStorage(){
     console.log('');
     console.log(submitRate);
     submitRate=convertedArr2;
-
-      
-    const add=JSON.parse(dat);
-    console.log(add);
-    if(add){
-      submitRate = add;
-
-        renderThreeImages();
     }
+}
 
-}
-}
+getLocalStorage();

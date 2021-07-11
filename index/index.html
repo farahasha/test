@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>reating rview</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <main>
+  <form id="Form">
+    <fieldset>
+        <legend>Rating</legend>
+        <label>Name</label>
+        <input type="text" name="name" required> 
+
+		<br>
+        <label>prefctuerName</label>
+		<input type="text" name="prefctuerName" required> 
+        
+		<br>
+
+		<div>
+			<h3>rate:</h3>
+			<span id="1" style="font-size:30px; cursor:pointer;"  class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)" ></span>
+			<span id="2"  style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
+			<span id="3"  style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
+			<span id="4"  style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
+			<span id="5"  style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span> 
+			
+		</div>	
+		
+		<br>
+   
+        <label>rview  description</label>
+        <input  type="text" name="rview" required>
+
+		<br>
+
+        <button type="submit">Submit </button>
+
+      </fieldset>
+
+  </form>
+
+  <!-- <section>
+    <h3> Previous Orders</h3>
+    <ul id="orders">
+
+    </ul>
+  </section> -->
+</main>
+  <script src="app.js"></script>
+</body>
+</html>
